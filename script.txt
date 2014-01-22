@@ -1,0 +1,512 @@
+[fmacfarlane@ts-ug-dev dataset]$ git add dataset.git
+fatal: pathspec 'dataset.git' did not match any files
+[fmacfarlane@ts-ug-dev dataset]$ git add dataset.dir
+fatal: pathspec 'dataset.dir' did not match any files
+[fmacfarlane@ts-ug-dev dataset]$ nano readme.md     
+[fmacfarlane@ts-ug-dev dataset]$ cd ..
+[fmacfarlane@ts-ug-dev project]$ git add dataset
+[fmacfarlane@ts-ug-dev project]$ git commint -m "this is my directory"
+git: 'commint' is not a git command. See 'git --help'.
+
+Did you mean this?
+	commit
+[fmacfarlane@ts-ug-dev project]$ git commit -m "this is my directory"
+[master 64e0933] this is my directory
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dataset/readme.md
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 350 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   f7c44b2..64e0933  master -> master
+[fmacfarlane@ts-ug-dev project]$ git add dataset
+[fmacfarlane@ts-ug-dev project]$ git commit -m "this is my directory"
+[master be8d7ee] this is my directory
+ 3 files changed, 109686 insertions(+)
+ create mode 100644 dataset/GDS4471_full.soft
+ create mode 100644 dataset/GDS4477_full.soft
+ create mode 100644 dataset/sqldata.txt
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 405 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   64e0933..be8d7ee  master -> master
+[fmacfarlane@ts-ug-dev project]$ cd dataset
+[fmacfarlane@ts-ug-dev dataset]$ ls -a
+.  ..  GDS4471_full.soft  GDS4477_full.soft  .git  readme.md  sqldata.txt
+[fmacfarlane@ts-ug-dev dataset]$ git commit -m "data"
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	GDS4471_full.soft
+#	GDS4477_full.soft
+#	readme.md
+#	sqldata.txt
+nothing added to commit but untracked files present (use "git add" to track)
+[fmacfarlane@ts-ug-dev dataset]$ git add --all
+[fmacfarlane@ts-ug-dev dataset]$ git commit -m "data"
+[master (root-commit) 0383e7a] data
+ 4 files changed, 109687 insertions(+)
+ create mode 100644 GDS4471_full.soft
+ create mode 100644 GDS4477_full.soft
+ create mode 100644 readme.md
+ create mode 100644 sqldata.txt
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/fmacfarlane/datset.git/'
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/fmacfarlane/datset.git/' not found
+[fmacfarlane@ts-ug-dev dataset]$ cd ..
+[fmacfarlane@ts-ug-dev project]$ ls -a
+.  ..  dataset  .git  readme.md
+[fmacfarlane@ts-ug-dev project]$ git add . -A
+[fmacfarlane@ts-ug-dev project]$ git commit -m "removed some files"
+[master e107365] removed some files
+ 3 files changed, 109686 deletions(-)
+ delete mode 100644 GDS4471_full.soft
+ delete mode 100644 GDS4477_full.soft
+ delete mode 100644 sqldata.txt
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 268 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   be8d7ee..e107365  master -> master
+[fmacfarlane@ts-ug-dev project]$ cd dataset
+[fmacfarlane@ts-ug-dev dataset]$ git add . -A
+[fmacfarlane@ts-ug-dev dataset]$ git commit -m "removed some files"
+[master 2d07329] removed some files
+ 1 file changed, 54865 deletions(-)
+ delete mode 100644 GDS4471_full.soft
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/fmacfarlane/datset.git/' not found
+[fmacfarlane@ts-ug-dev dataset]$ cd ..       
+[fmacfarlane@ts-ug-dev project]$ git commit -m "this is my directory"
+# On branch master
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    dataset/GDS4471_full.soft
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Everything up-to-date
+[fmacfarlane@ts-ug-dev project]$ git commit -a
+Aborting commit due to empty commit message.
+[fmacfarlane@ts-ug-dev project]$ cd dataset
+[fmacfarlane@ts-ug-dev dataset]$ git rm GDS4471_full.soft
+fatal: pathspec 'GDS4471_full.soft' did not match any files
+[fmacfarlane@ts-ug-dev dataset]$ ls -a
+.  ..  GDS4477_full.soft  .git  readme.md  sqldata.txt
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/fmacfarlane/datset.git/' not found
+[fmacfarlane@ts-ug-dev dataset]$ git add --all
+[fmacfarlane@ts-ug-dev dataset]$ git commit -m "I have altered files"
+# On branch master
+nothing to commit, working directory clean
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/fmacfarlane/datset.git/' not found
+[fmacfarlane@ts-ug-dev dataset]$ cd .. 
+[fmacfarlane@ts-ug-dev project]$ git add dataset
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'dataset/GDS4471_full.soft' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+[fmacfarlane@ts-ug-dev project]$ git add dataset --all
+[fmacfarlane@ts-ug-dev project]$ git commit -m "I have altered files"
+[master 3cc3845] I have altered files
+ 1 file changed, 54865 deletions(-)
+ delete mode 100644 dataset/GDS4471_full.soft
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 307 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   e107365..3cc3845  master -> master
+[fmacfarlane@ts-ug-dev project]$ cd dataset
+[fmacfarlane@ts-ug-dev dataset]$ ls -a
+.  ..  GDS4477_full.soft  .git  readme.md  sqldata.txt
+[fmacfarlane@ts-ug-dev dataset]$ git add GDS4477_full.soft
+[fmacfarlane@ts-ug-dev dataset]$ git commit -m "This is my data"
+# On branch master
+nothing to commit, working directory clean
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/fmacfarlane/datset.git/' not found
+[fmacfarlane@ts-ug-dev dataset]$ nano  GDS4477_full.soft
+[fmacfarlane@ts-ug-dev dataset]$ 
+[fmacfarlane@ts-ug-dev dataset]$ git add GDS4477_full.soft
+^[[A^[[[fmacfarlane@ts-ug-dev dataset]$                          
+[fmacfarlane@ts-ug-dev dataset]$ git commit -m "This is my data"
+[master f99b1a5] This is my data
+ 1 file changed, 1 insertion(+)
+[fmacfarlane@ts-ug-dev dataset]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/fmacfarlane/datset.git/' not found
+[fmacfarlane@ts-ug-dev dataset]$ cd ..
+[fmacfarlane@ts-ug-dev project]$ nano dataset/GDS4477_full.soft
+[fmacfarlane@ts-ug-dev project]$ git add  dataset/GDS4477_full.soft
+[fmacfarlane@ts-ug-dev project]$ git commit -m "This is my data"
+# On branch master
+nothing to commit, working directory clean
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Everything up-to-date
+[fmacfarlane@ts-ug-dev project]$ nano dataset/GDS4477_full.soft
+[fmacfarlane@ts-ug-dev project]$ git diff  dataset/GDS4477_full.soft
+diff --git a/dataset/GDS4477_full.soft b/dataset/GDS4477_full.soft
+index 7d9035b..c58a208 100644
+--- a/dataset/GDS4477_full.soft
++++ b/dataset/GDS4477_full.soft
+@@ -1,4 +1,6 @@
+ ^DATABASE = Geo
++
++
+ !Database_name = Gene Expression Omnibus (GEO)
+ !Database_institute = NCBI NLM NIH
+ !Database_web_link = http://www.ncbi.nlm.nih.gov/geo
+[fmacfarlane@ts-ug-dev project]$ git commit -m "This is my data"
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   dataset/GDS4477_full.soft
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+[fmacfarlane@ts-ug-dev project]$ git commit-a  -m "This is my data"
+git: 'commit-a' is not a git command. See 'git --help'.
+
+Did you mean this?
+	commit-tree
+[fmacfarlane@ts-ug-dev project]$ git add  dataset/GDS4477_full.soft
+[fmacfarlane@ts-ug-dev project]$ git commit -m "This is my data"
+[master 41a4a78] This is my data
+ 1 file changed, 2 insertions(+)
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.48 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   3cc3845..41a4a78  master -> master
+[fmacfarlane@ts-ug-dev project]$ nano dataset/readme.md       
+[fmacfarlane@ts-ug-dev project]$ git diff  dataset/readme.md        
+diff --git a/dataset/readme.md b/dataset/readme.md
+index 60c7cf2..b6cecf2 100644
+--- a/dataset/readme.md
++++ b/dataset/readme.md
+@@ -1 +1,3 @@
+-THIS IS MY DATA SET DIRECTORY
++#This is my dataset directory
++
++I will use this directory to store my datasets and the sql tables of my data.
+[fmacfarlane@ts-ug-dev project]$ git add  dataset/readme.md        
+[fmacfarlane@ts-ug-dev project]$ git commit -m "description"      
+[master 0b47a82] description
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 477 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   41a4a78..0b47a82  master -> master
+[fmacfarlane@ts-ug-dev project]$ nano dataset/sqldata.txt
+[fmacfarlane@ts-ug-dev project]$ git add  dataset/sqldata.txt
+[fmacfarlane@ts-ug-dev project]$ git commit -m "create table text file"
+[master e3b1f6f] create table text file
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[fmacfarlane@ts-ug-dev project]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': fmacfarlane
+Password for 'https://fmacfarlane@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 393 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To https://github.com/fmacfarlane/project.git
+   0b47a82..e3b1f6f  master -> master
+[fmacfarlane@ts-ug-dev project]$ 
