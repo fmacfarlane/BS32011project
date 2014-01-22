@@ -1,3 +1,5 @@
+My Create Table textfile
+
 [fmacfarlane@ts-ug-dev ~]$ cd project git init
 [fmacfarlane@ts-ug-dev project]$ git init
 Reinitialized existing Git repository in /homes/fmacfarlane/project/.git/
@@ -41,5 +43,4 @@ mysql> describe data;
 | Genotype  | varchar(20) | YES  |     | NULL    |       |
 | Variation | varchar(20) | YES  |     | NULL    |       |
 +-----------+-------------+------+-----+---------+-------+
-3 rows in set (0.01 sec)
-
+3 rows in set (0.01 sec
