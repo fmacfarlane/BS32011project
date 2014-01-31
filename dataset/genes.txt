@@ -1,3 +1,4 @@
+INFORMATION FOR GENES TABLE
 780	DDR1	discoidin domain receptor tyrosine kinase 1
 5982	RFC2	replication factor C (activator 1) 2, 40kDa
 3310	HSPA6	heat shock 70kDa protein 6 (HSP70B')
