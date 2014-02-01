@@ -1,6 +1,5 @@
 python readdata.py
 #enter mysql
 mysql -u fmacfarlane -p fmacfarlane
-LOAD DATA LOCAL INFILE expression.txt INTO TABLE expression2 (id_ref, gene_expression, sample_id);
+LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression2 (id_ref, gene_expression, sample_id);
 #repeat for other tables
-
