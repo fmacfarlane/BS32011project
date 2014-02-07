@@ -31,13 +31,15 @@ class Gene():
 		self.gene_symbol=result[1]
 		#now fetch the probes..
 		probesql='select id_ref from probe where gene_id=%s'
+		cursor.execute(probesql,(gene_id))
+		result=cursor.fetchone()
+		self.id_ref=result[0]
 		#fill in the blanks
 		
 
 		for result in cursor.fetchall():
 			self.probelist.append(result[0])
-		print self.gene_title
-		print self.gene_symbol
-			
+		print ( gene_title, gene_symbol, gene_id, id_ref)		
 #	def get_expression(self,experiment):
+		 
 #update and alter ,do at least two querys -TASK FOR THIS WEEK 
