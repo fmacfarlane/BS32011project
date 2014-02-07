@@ -9,8 +9,7 @@ class DBHandler():
 
 	def __init__(self):
 		if DBHandler.connection == None:
-			DBHandler.connection == MySQLdb.connect(db=DBHandler.dbname, \ user=DBHandler.dbuser, passwd=DBHandler.dbpassword)
-
+			DBHandler.connection == MySQLdb.connect(db=DBHandler.dbname, user=DBHandler.dbuser, passwd=DBHandler.dbpassword)
 	def cursor(self):
 			return DBHandler.connection.cursor()
 
@@ -20,23 +19,25 @@ class Gene():
 	gene_id=''
 	probelist=[]
 
-	def __init__(self,geneid):
+	def __init__(self,gene_id):
 		db=DBHandler()
 		cursor=db.cursor()
 		sql='select gene_title, gene_symbol, gene_id from gene where gene_id=%s'
-		cursor.execute9sql,(geneid,))
+		cursor.execute(sql,(gene_id,))
 		#query database
 		#get result and populate the class fields.
 		result=cursor.fetchone()
 		self.gene_title =result[0]
-		self.gene_symnol=result[1]
+		self.gene_symbol=result[1]
 		#now fetch the probes..
-		probesql='select id-ref from probe where gene_id=%s'
+		probesql='select id_ref from probe where gene_id=%s'
 		#fill in the blanks
 		
 
 		for result in cursor.fetchall():
 			self.probelist.append(result[0])
-
-	def get_expression(self,experiment):
+		print self.gene_title
+		print self.gene_symbol
+			
+#	def get_expression(self,experiment):
 #update and alter ,do at least two querys -TASK FOR THIS WEEK 
