@@ -9,9 +9,9 @@ class DBHandler():
 
 	def __init__(self):
 		if DBHandler.connection == None:
-			DBHandler.connection == MySQLdb.connect(db=DBHandler.dbname, user=DBHandler.dbuser, passwd=DBHandler.dbpassword)
+			DBHandler.connection = MySQLdb.connect(db=DBHandler.dbname, user=DBHandler.dbuser, passwd=DBHandler.dbpassword)
 	def cursor(self):
-			return DBHandler.connection.cursor()
+		return DBHandler.connection.cursor()
 
 class Gene():
 	gene_title=''
@@ -23,59 +23,39 @@ class Gene():
 		db=DBHandler()
 		cursor=db.cursor()
 		sql='select gene_title, gene_symbol, gene_id from gene where gene_id=%s'
+		self.gene_id=gene_id
 		cursor.execute(sql,(gene_id,))
 		#query database
+				
 		#get result and populate the class fields.
+
 		result=cursor.fetchone()
-		self.gene_title =result[0]
+		self.gene_title=result[0]
 		self.gene_symbol=result[1]
+
 		#now fetch the probes..
-class Probe():
-	id_ref=''
-	gene_id=''
-	probelist=[]
-	
-	def __init__(self,id_ref):
-		db=DBHandler()
-		cursor=db.cursor()
-		probesql='select gene_id from probe where id_ref=%s'
-		cursor.execute(probesql,(id_ref))
-		result=cursor.fetchone()
-		self.gene_id=result[0]
-		#fill in the blanks
-		
-class Expression():
-	id_ref=''
-	gene_expression=''
-	sample_id=''
-	probelist=[]
 
-	def __init__(self,id_ref):
-		db=DBHandler()
-		cursor=db.cursor()
-		expsql='select gene_expression, sample_id from expression where id_ref=%s'
-		cursor.execute(expsql,(id_ref))
-		result=cursor.fetchone()
-		self.gene_expression=result[0]
-		self.sample_id=result[1]
-
-class Sample():
-	experiment_id=''
-	source=''
-	probelist=[]
-
-	def __init__(self,experiment_id):
-		db=DBHandler()
-		cursor=db.cursor()
-		samplesql='select source from sample where experiment_id=%s'
-		cursor.execute(samplesql,(experiment_id))
-		result=cursor.fetchone()
-		self.source=result[0]
-
-
-		for result in cursor.fetchall():
+		probesql='select id_ref from probe where gene_id=%s'
+		cursor.execute(probesql,(self.gene_id,))
+		resultlist=cursor.fetchall()
+		for result in resultlist:
 			self.probelist.append(result[0])
-		print ( gene_title, gene_symbol, gene_id, id_ref)		
-#	def get_expression(self,experiment):
+		
+	def get_expression(self, sample_id):
+		db=DBHandler()
+		cursor=db.cursor()
+		sql='select gene_expression from expression where sample_id=%s'
+		self.sample_id=sample_id
+		exvals=[]
+		for p in self.probelist:
+			try:
+				cursor.execute(sql,(p, sample_id))
+				exvals.append(cursor.fetchone()[0])
+			except Exception, e:
+				raise Exception('Error occured retrieving expression data for probe %s and experiment %s:%s'%(p,sample_id,e))
+		return exvals
+
 		 
-#update and alter ,do at least two querys -TASK FOR THIS WEEK 
+#update and alter ,do at least two querys -TASk FOR NEXT WEEK !!!!!!!!
+ 
+
