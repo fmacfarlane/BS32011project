@@ -30,48 +30,12 @@ class Gene():
 		self.gene_title =result[0]
 		self.gene_symbol=result[1]
 		#now fetch the probes..
-class Probe():
-	id_ref=''
-	gene_id=''
-	probelist=[]
-	
-	def __init__(self,id_ref):
-		db=DBHandler()
-		cursor=db.cursor()
-		probesql='select gene_id from probe where id_ref=%s'
-		cursor.execute(probesql,(id_ref))
+		probesql='select id_ref from probe where gene_id=%s'
+		cursor.execute(probesql,(gene_id))
 		result=cursor.fetchone()
-		self.gene_id=result[0]
+		self.id_ref=result[0]
 		#fill in the blanks
 		
-class Expression():
-	id_ref=''
-	gene_expression=''
-	sample_id=''
-	probelist=[]
-
-	def __init__(self,id_ref):
-		db=DBHandler()
-		cursor=db.cursor()
-		expsql='select gene_expression, sample_id from expression where id_ref=%s'
-		cursor.execute(expsql,(id_ref))
-		result=cursor.fetchone()
-		self.gene_expression=result[0]
-		self.sample_id=result[1]
-
-class Sample():
-	experiment_id=''
-	source=''
-	probelist=[]
-
-	def __init__(self,experiment_id):
-		db=DBHandler()
-		cursor=db.cursor()
-		samplesql='select source from sample where experiment_id=%s'
-		cursor.execute(samplesql,(experiment_id))
-		result=cursor.fetchone()
-		self.source=result[0]
-
 
 		for result in cursor.fetchall():
 			self.probelist.append(result[0])
