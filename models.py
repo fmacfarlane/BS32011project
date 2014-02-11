@@ -44,7 +44,7 @@ class Gene():
 	def get_expression(self, sample_id):
 		db=DBHandler()
 		cursor=db.cursor()
-		sql='select gene_expression from expression where sample_id=%s'
+		sql='select gene_expression from expression where id_ref=%s and sample_id=%s'
 		self.sample_id=sample_id
 		exvals=[]
 		for p in self.probelist:
@@ -52,7 +52,7 @@ class Gene():
 				cursor.execute(sql,(p, sample_id))
 				exvals.append(cursor.fetchone()[0])
 			except Exception, e:
-				raise Exception('Error occured retrieving expression data for probe %s and experiment %s:%s'%(p,sample_id,e))
+				raise Exception('Error occured retrieving expression data for id_ref %s and sample_id %s:%s'%(p,sample_id,e))
 		return exvals
 
 		 
