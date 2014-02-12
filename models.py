@@ -44,7 +44,7 @@ class Gene():
 	def get_expression(self, sample_id):
 		db=DBHandler()
 		cursor=db.cursor()
-		sql='select gene_expression from expression where id_ref=%s and sample_id=%s'
+		sql='select gene_expression, from expression where id_ref=%s and sample_id=%s'
 		self.sample_id=sample_id
 		exvals=[]
 		for p in self.probelist:
@@ -55,7 +55,17 @@ class Gene():
 				raise Exception('Error occured retrieving expression data for id_ref %s and sample_id %s:%s'%(p,sample_id,e))
 		return exvals
 
-		 
-#update and alter ,do at least two querys -TASk FOR NEXT WEEK !!!!!!!!
- 
+	def get_average(self, gene_id):
+		db=DBHandler()
+		cursor=db.cursor()
+		sql='select sum(gene_expression)/count(gene_expression) as average, g.gene_symbol, e.sample_id from expression e inner join probe p on e.id_ref=p.id_ref inner join gene g on g.gene_id=p.gene_id inner join sample s on s.experiment_id=e.sample_id where g.gene_id=%s'
+		self.gene_id=gene_id
+		cursor.execute(sql,(gene_id,))
+		resultlist=cursor.fetchall()
+		for result in resultlist:
+			self.probelist.append(result[0])
+			
+		return resultlist
+
+		
 

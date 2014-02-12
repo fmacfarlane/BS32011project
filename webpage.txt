@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fiona's Project Webpage</title>
+	</head>
+	<body>
+		<h1>Fiona's Project Webpage</h1>
+		Hi, I'm Fiona Macfarlane and this is my webpage. I am currently undertaking the BS32011 Bioinformatics project , I will use this page to display my data and the queries I have run.
+	<form action=models.py>
+	<table><tr>
+		<td>enter an SQl query</td>
+		<td><input type=text name=query /></td>
+	</tr></table>
+	</form>
+	</body>
+</html>
