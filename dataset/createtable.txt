@@ -1,3 +1,6 @@
- CREATE TABLE data3 (gene_title VARCHAR(30) NOT NULL, gene_symbol VARCHAR(30) NOT NULL, gene_id VARCHAR(30) NOT NULL, unigene_title VARCHAR(30) NOT NULL, unigene_symbol VARCHAR(30) NOT NULL, unigene_id VARCHAR(30) NOT NULL, nucleotide_title VARCHAR(30) NOT NULL, gi VARCHAR(30) NOT NULL, genbank_accession VARCHAR(30) NOT NULL);
- LOAD DATA LOCAL INFILE 'GDS4477_full.soft' INTO TABLE data3 IGNORE 1 LINES (@dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, @dummy, gene_title, gene_symbol, gene_id, unigene_title, unigene_symbol, unigene_id, nucleotide_title, gi, genbank_accession);
- SELECT gene_symbol FROM data3
+# mysql command used to create the tables
+create table gene(gene_title varchar(30) not null, gene_symbol varchar(30) not null, gene_id varchar(30) not null);
+# repeat replacing the fields and table name appropriately to create the other tables.
+# add primary keys
+alter table gene add primary key (gene_id);
+#again repeat for other tables, modifying as appropriate.
