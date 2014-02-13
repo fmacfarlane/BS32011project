@@ -54,7 +54,7 @@ class Gene():
 			except Exception, e:
 				raise Exception('Error occured retrieving expression data for id_ref %s and sample_id %s:%s'%(p,sample_id,e))
 		return exvals
-
+# get average allows us to see the average expression of a particular gene for all samples, therefore we can compare if a sample has high/low expression compared to others
 	def get_average(self, gene_id):
 		db=DBHandler()
 		cursor=db.cursor()
