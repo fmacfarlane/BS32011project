@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<h1>Fiona's Project Webpage</h1>
-		Hi, I'm Fiona Macfarlane and this is my webpage. I am currently undertaking the BS32011 Bioinformatics project , I will use this page to display my data and the queries I have run.
+		Hi, I'm Fiona Macfarlane and this is my webpage. I am currently undertaking the BS32011 Bioinformatics project , I will use this page to display my data and run the queries for my datsets.
 	<form action=models.py>
 	<table><tr>
 		<td>enter an SQl query</td>
