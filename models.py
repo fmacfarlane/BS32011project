@@ -1,5 +1,5 @@
 '''Classes to represent our gene expression objects'''
-
+#first of all we must create a connection to the mysql database and a cursor to us within python
 import MySQLdb
 class DBHandler():
 	connection=None
@@ -12,13 +12,13 @@ class DBHandler():
 			DBHandler.connection = MySQLdb.connect(db=DBHandler.dbname, user=DBHandler.dbuser, passwd=DBHandler.dbpassword)
 	def cursor(self):
 		return DBHandler.connection.cursor()
-
+#We then create a class that can be used to query the database
 class Gene():
 	gene_title=''
 	gene_symbol=''
 	gene_id=''
 	probelist=[]
-
+#We also input an sql query to run on the dataset
 	def __init__(self,gene_id):
 		db=DBHandler()
 		cursor=db.cursor()
@@ -27,26 +27,27 @@ class Gene():
 		cursor.execute(sql,(gene_id,))
 		#query database
 				
-		#get result and populate the class fields.
+		#get result and populate the class fields, fetchone collects a single response to the query
 
 		result=cursor.fetchone()
 		self.gene_title=result[0]
 		self.gene_symbol=result[1]
 
-		#now fetch the probes..
+		#now fetch the probes, we create another query to run and create a result list using the fetchall command, therefore all of the results will be collected
 
 		probesql='select id_ref from probe where gene_id=%s'
 		cursor.execute(probesql,(self.gene_id,))
 		resultlist=cursor.fetchall()
 		for result in resultlist:
 			self.probelist.append(result[0])
-		
+#we define another item to get the gene expression, using another query and settin the sample id as another modifiable variable.
 	def get_expression(self, sample_id):
 		db=DBHandler()
 		cursor=db.cursor()
 		sql='select gene_expression, from expression where id_ref=%s and sample_id=%s'
 		self.sample_id=sample_id
 		exvals=[]
+#We create an exception to indicate when the script does not run due to error
 		for p in self.probelist:
 			try:
 				cursor.execute(sql,(p, sample_id))
@@ -66,6 +67,6 @@ class Gene():
 			self.probelist.append(result[0])
 			
 		return resultlist
-
+# the return command allows the data to be visualised and printed on screen
 		
 
