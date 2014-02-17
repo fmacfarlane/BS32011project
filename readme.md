@@ -9,4 +9,6 @@ This file will describe my actions throughout the project.
 #Week 4
  I created the classes file, and tested various queries on the data.
 #Week 5
- I edited the classes script, added more queries, some included joining the tables. I created a text script for creating a webpage to display my data. I also ensured that my gihub information was all tidy, with appropriate comments.
+ I edited the classes script, added more queries, some included joining the tables. I created a text script for creating a webpage to display my data.
+#Week 6
+ I attempted to point my webpage to the correct python scripts so that the webpage displayed a query and result from the datasets.
