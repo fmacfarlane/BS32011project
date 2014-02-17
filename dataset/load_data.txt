@@ -1,5 +1,7 @@
+#run the file in python
 python readdata.py
 #enter mysql
 mysql -u fmacfarlane -p fmacfarlane
-LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression2 (id_ref, gene_expression, sample_id);
+#load the data from the text files into appropriate tables
+LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression (id_ref, gene_expression, sample_id);
 #repeat for other tables replacing the file name, table name and fields as appropriate.
