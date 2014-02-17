@@ -27,7 +27,7 @@ for title in header.split('\t'):
 genefile=open('genes.txt', 'w')
 expressionfile=open('expression.txt','w')
 probefile=open('probes.txt', 'w')
-#assigning the correct fields for the correct tables
+#assigning the correct fields that corresponds to the columns in the tables
 genefields=['Gene ID', 'Gene symbol', 'Gene title']
 samples=header.split('\t')[2:int(colnames['Gene title'])]
 probefields=['ID_REF','Gene ID']
@@ -37,7 +37,7 @@ def buildrow(row, fields):
     for f in fields:
         newrow.append(row[int(colnames[f])])
     return "\t".join(newrow)+"\n"
-#add data from files to the  tables
+#add data from datset into text files
 def build_expression(row, samples):
     exprrows=[]
     for s in samples:
@@ -47,6 +47,7 @@ def build_expression(row, samples):
 	exprrows.append("\t".join(newrow))
     return "\n".join(exprrows)+"\n"
 rows=0    
+#create a try and exception for any errors that may be encountered
 for line in fh.readlines():
     try:
         if line[0]=='!':
@@ -58,9 +59,10 @@ for line in fh.readlines():
 	rows=rows+1
     except:
 	pass
+#close the files after use to ensure that the script will run
 genefile.close()
 probefile.close()
 expressionfile.close()
-#print tables
+#print message alerting the reader of the progres of the command
 print '%s rows processed'%rows
     
