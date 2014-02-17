@@ -1,6 +1,6 @@
-# mysql command used to create the tables
+# mysql command used to create the tables with the fields specified
 create table gene(gene_title varchar(30) not null, gene_symbol varchar(30) not null, gene_id varchar(30) not null);
 # repeat replacing the fields and table name appropriately to create the other tables.
-# add primary keys
+# add primary keys to allow linkage between other tables
 alter table gene add primary key (gene_id);
-#again repeat for other tables, modifying as appropriate.
+#again repeat for other tables, modifying the fields and primary key names as appropriate.
