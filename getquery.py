@@ -15,8 +15,8 @@ cursor=db.cursor()
 cursor.execute('select id_ref from probe where gene_id=%s',(form['query'],))
 
 print form['query']
-#print "<form method=GET action=models.py>"
-#print "<table><tr><td>select id_ref from probe where gene_id=</td><td><imput type=text name=query /></td></tr>"
+print "<form method=POST action=models.py>"
+print "<table><tr><td>select id_ref from probe where gene_id=</td><td><imput type=text name=query /></td></tr>"
 print "</table>"
 print "</form>"
 print "</body></html>"
