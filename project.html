@@ -6,7 +6,7 @@
         <body>
               	<h1>Fiona's Project Webpage</h1>
                 Hi, I'm Fiona Macfarlane and this is my webpage. I am currently undertaking the bioinformatics practical module. This webpage will display my dataset and the results to specific queries.
-        <form action=cgi-bin/getquery.py>
+        <form method=POST action=cgi-bin/getquery.py>
 	<table><tr>
                 <td>select id_ref from probe where gene_id=</td>
                 <td><input type=text name=query></td>
