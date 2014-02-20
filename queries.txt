@@ -1,0 +1,9 @@
+#the following commands were used in MySQL to call the queries once the class Gene had been created.
+gene=Models.Gene('780')
+#This specifies that the gene we want information for is the DDR1 gene
+gene.gene_title
+#This shows the gene title for the gene with id 780
+gene.get_expression('GSM855942')
+#This gives the gene expression of the DDR1 gene studied in the sample GSM855942.
+gene.get_average('780')
+#This gives the average gene expression of the DDR1 gene over all of the samples.
