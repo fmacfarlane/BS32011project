@@ -11,4 +11,4 @@ This file will describe my actions throughout the project.
 #Week 5
  I edited the classes script, added more queries, some included joining the tables. I created a text script for creating a webpage to display my data.
 #Week 6
- I attempted to point my webpage to the correct python scripts so that the webpage displayed a query and result from the datasets.
+ I attempted to point my webpage to the correct python scripts so that the webpage displayed a query and result from the datasets. I also added comments to the previous python and mysql scripts used to indicated the command purposes.
