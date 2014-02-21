@@ -4,7 +4,7 @@ import cgitb
 import os
 from mod_python import apache
 directory = os.path.dirname(__models.py__)
-models = apache.import_module('modules', path=[directory])
+models = apache.import_module('modules', path=[cgi-bin])
 cgitb.enable()
 #imports all of the nessecary modules within python
 form = cgi.FieldStorage()
