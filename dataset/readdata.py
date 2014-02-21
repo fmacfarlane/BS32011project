@@ -33,12 +33,14 @@ samples=header.split('\t')[2:int(colnames['Gene title'])]
 probefields=['ID_REF','Gene ID']
 #create a new row with the column headers
 def buildrow(row, fields):
+'''create a new row with the column headers'''
     newrow=[]
     for f in fields:
         newrow.append(row[int(colnames[f])])
     return "\t".join(newrow)+"\n"
 #add data from datset into text files
 def build_expression(row, samples):
+'''add data from datset into text files'''
     exprrows=[]
     for s in samples:
         newrow=[s,]
